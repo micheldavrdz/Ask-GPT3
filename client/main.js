@@ -24,7 +24,7 @@ const botType = (el, text) => {
 
   let interval = setInterval(() => {
     index < text.length
-      ? ((el.innerHTML += text.chartAt(index)), index++)
+      ? ((el.innerHTML += text.charAt(index)), index++)
       : clearInterval(interval);
   }, 30);
 };
@@ -70,7 +70,37 @@ const submitHandler = async (e) => {
   chatContainer.scrollTop = chatContainer.scrollHeight;
 
   //shows the loading dots
-  loader(document.querySelector(`#${uniqueId}`));
+  const msgContainer = document.querySelector(`#${uniqueId}`);
+  loader(msgContainer);
+
+  //fetch OpenAI's response
+  const response = await fetch("http://localhost:5000", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ prompt: data.get("prompt") }),
+  });
+
+  clearInterval(loading);
+  msgContainer.innerHTML = "";
+
+  if (response.ok) {
+    const data = await response.json();
+    const parsedData = data.message.trim();
+
+    botType(msgContainer, parsedData);
+  } else {
+    const error = await response.text();
+    msgContainer.innerHTML = `
+    Opps, something went wrong! 
+    
+    Here's the actual error in case you're curious, but don't mind it too much if you're not a developer :): 
+    
+    ${error}
+    
+  `;
+  }
 };
 
 form.addEventListener("submit", submitHandler);
