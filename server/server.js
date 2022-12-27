@@ -36,7 +36,7 @@ app.post("/", async (req, res) => {
     });
 
     res.status(200).send({
-      message: response.data.choices.at(0).text,
+      message: response.data.choices[0].text,
     });
   } catch (error) {
     console.log(error);
