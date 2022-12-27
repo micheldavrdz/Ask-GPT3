@@ -5,7 +5,7 @@ import user from "./assets/svg/user.svg";
 const form = document.querySelector("form"); // only form in the page so no need to specify
 const chatContainer = document.querySelector("#chat_container");
 
-// Shows 3 dots while waiting for the response
+// Show 3 dots while waiting for the response
 let loading;
 
 const loader = (el) => {
@@ -52,3 +52,28 @@ const chatStripe = (isBot, value, uniqueId) => {
       </div>
     `;
 };
+
+const submitHandler = async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  //user's chatstripe (false so it knows it's not a bot)
+  chatContainer.innerHTML += chatStripe(false, data.get("user-prompt"));
+  form.reset();
+
+  //bot's chatstripe (true so it knows it's a bot and empty so it fills it with the bot's response)
+  const uniqueId = generateMsgId();
+  chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
+
+  //scrolls so the message is visible
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+
+  //shows the loading dots
+  loader(document.querySelector(`#${uniqueId}`));
+};
+
+form.addEventListener("submit", submitHandler);
+form.addEventListener("keyup", (e) => {
+  e.key === "Enter" && submitHandler(e);
+});
