@@ -64,13 +64,13 @@ If you want to run a local version on your computer you should follow these step
   - [hicon](https://www.svgrepo.com/svg/438000/send) for the send message icon.
 
 ## Español
-Con la reciente popularidad de aplicaciones que utilizan AI para responder preguntar de los usuarios como ChatGPT quise aprender a utilizar las API que OpenAI tiene disponibles, lo cual nos lleva este proyecto de Ask GPT3.
+Con la reciente popularidad de aplicaciones que utilizan IA para responder preguntar de los usuarios como ChatGPT quise aprender a utilizar las API que OpenAI tiene disponibles, lo cual nos lleva este proyecto de Ask GPT3.
 
 ![Recording 2022-12-27 at 15 09 43](https://user-images.githubusercontent.com/93167320/209722648-bfc67a79-a786-44ae-939b-d56ec2a92154.gif)
 
 El proyecto se encuentra disponible en la siguiente url: [Ask-GPT3](https://michel-ask-gpt3.netlify.app/).
 
-Ya que el proyecto en este momento utiliza los creditos gratuitos de OpenAI, la funcionalidad del sitio dependera totalmente si aún hay creditos disponibles o si llega la fecha limite de dichos creditos (1° Abril, 2023), lo que ocurra primero, pero el código en el repositorio aún funciona.
+Ya que el proyecto en este momento utiliza los créditos gratuitos de OpenAI, la funcionalidad del sitio dependerá totalmente si aún hay créditos disponibles o si llega la fecha limite de dichos creditos (1° Abril, 2023), lo que ocurra primero, pero el código en el repositorio aún funciona.
 
 ### OpenAI
 
