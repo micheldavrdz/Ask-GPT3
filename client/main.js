@@ -59,7 +59,7 @@ const submitHandler = async (e) => {
   const data = new FormData(form);
 
   //user's chatstripe (false so it knows it's not a bot)
-  chatContainer.innerHTML += chatStripe(false, data.get("user-prompt"));
+  chatContainer.innerHTML += chatStripe(false, data.get("prompt"));
   form.reset();
 
   //bot's chatstripe (true so it knows it's a bot and empty so it fills it with the bot's response)
