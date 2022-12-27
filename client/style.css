@@ -5,11 +5,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #222222;
+  font-family: "Poppins", sans-serif;
+  background-color: #222222;
 }
 
 #app {
@@ -103,7 +103,7 @@ form {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0.5rem;
-  background: #363537;
+  background-color: #363537;
 }
 
 textarea {

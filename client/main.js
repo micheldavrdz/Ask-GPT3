@@ -8,7 +8,7 @@ const chatContainer = document.querySelector("#chat_container");
 // Show 3 dots while waiting for the response
 let loading;
 
-const loader = (el) => {
+const loader = el => {
   el.textContent = "";
 
   loading = setInterval(() => {
@@ -53,7 +53,7 @@ const chatStripe = (isBot, value, uniqueId) => {
     `;
 };
 
-const submitHandler = async (e) => {
+const submitHandler = async e => {
   e.preventDefault();
 
   const data = new FormData(form);
@@ -93,9 +93,9 @@ const submitHandler = async (e) => {
   } else {
     const error = await response.text();
     msgContainer.innerHTML = `
-    Opps, something went wrong! 
+    Oops, something went wrong! 
     
-    Here's the actual error in case you're curious, but don't mind it too much if you're not a developer :): 
+    Here's the actual error in case you're curious, it may look ugly but don't mind it too much if you're not a developer :): 
     
     ${error}
     
@@ -104,6 +104,6 @@ const submitHandler = async (e) => {
 };
 
 form.addEventListener("submit", submitHandler);
-form.addEventListener("keyup", (e) => {
+form.addEventListener("keyup", e => {
   e.key === "Enter" && submitHandler(e);
 });
