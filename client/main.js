@@ -74,7 +74,7 @@ const submitHandler = async e => {
   loader(msgContainer);
 
   //fetch OpenAI's response
-  const response = await fetch("https://michel-gpt3.onrender.com/", {
+  const response = await fetch("https://michel-gpt3.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
