@@ -1,6 +1,16 @@
 /* Poppins Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;800;900&display=swap");
 
+:root {
+  --font-color: #f7f1ff;
+  --font-family: "Poppins", sans-serif;
+  --primary-background-color: #222222;
+  --secondary-background-color: #363537;
+  --tertiary-background-color: #40414f;
+  --textarea-color: #fff;
+  --chat-gap: 0.8rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +18,9 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #222222;
+  font-family: var(--font-family);
+  color: var(--font-color);
+  background-color: var(--primary-background-color);
 }
 
 #app {
@@ -46,7 +57,7 @@ body {
 }
 
 .bot {
-  background-color: #40414f;
+  background-color: var(--tertiary-background-color);
 }
 
 .chat {
@@ -57,7 +68,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 0.8rem;
+  gap: var(--chat-gap);
 }
 
 .chat__profile {
@@ -82,7 +93,7 @@ body {
 
 .chat__message {
   flex: 1;
-  color: #f7f1ff;
+  color: var(--font-color);
   font-size: 1rem;
   max-width: 100%;
   overflow-x: scroll;
@@ -98,24 +109,23 @@ body {
 form {
   display: flex;
   flex-direction: row;
-  gap: 0.8rem;
+  gap: var(--chat-gap);
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0.5rem;
-  background-color: #363537;
+  background-color: var(--secondary-background-color);
 }
 
 textarea {
   width: 100%;
-  color: #fff;
+  color: var(--textarea-color);
   font-size: 1rem;
   padding: 0.5rem;
   background: transparent;
   border-radius: 5px;
   border: none;
   outline: none;
-  resize: none;
 }
 
 button {
@@ -128,4 +138,12 @@ button {
 form img {
   width: 30px;
   height: 30px;
+}
+
+/* Media Queries */
+
+@media (min-width: 800px) {
+  .chat {
+    gap: 1.6rem;
+  }
 }
