@@ -1,3 +1,5 @@
+"use strict";
+
 // importing assets
 import bot from "./assets/svg/bot.svg";
 import user from "./assets/svg/user.svg";
